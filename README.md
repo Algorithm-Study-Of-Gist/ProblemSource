@@ -1,1 +1,3 @@
-# ProblemSource
+# ProblemSourc
+백준 문제 올릴때 양식  
+BJ_(문제 번호) 폴더안에 BJ_(문제 번호)_(이름)과 같이 입력해서 저장.
