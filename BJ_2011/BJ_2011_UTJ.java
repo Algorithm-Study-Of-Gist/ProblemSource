@@ -2,18 +2,19 @@ import java.util.*;
 
 class Q2011
 {
+	//wrong
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		
 		int n_c=n;
-		int digit=0;									//nÀÌ ¸îÀÚ¸® ¼ö ÀÎÁö
+		int digit=0;									//nì´ ëª‡ìžë¦¬ ìˆ˜ ì¸ì§€
 		while(n_c>0){
 			n_c/=10;
 			digit++;
 		}
-		int[] arrN = new int [digit];		// 25114¸¦ ¹ÞÀ¸¸é 2/5/1/1/4·Î ¸¸µé¾îÁÖ´Â ¹è¿­
+		int[] arrN = new int [digit];		// 25114ë¥¼ ë°›ìœ¼ë©´ 2/5/1/1/4ë¡œ ë§Œë“¤ì–´ì£¼ëŠ” ë°°ì—´
 		for (int i=0;i<digit ;i++ ){
 			n_c=n;
 			for (int j=0;j<i ;j++ )
