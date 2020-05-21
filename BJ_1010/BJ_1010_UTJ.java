@@ -1,6 +1,43 @@
 import java.util.*;
 
-class Q1010
+class Q10102nd
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int qNum=sc.nextInt();
+		int[][] qArr = new int [qNum][2];
+		for (int i=0;i<qNum ;i++ ){
+			qArr[i][0]=sc.nextInt();
+			qArr[i][1]=sc.nextInt();
+		}
+		int n,m;
+	
+		for (int l=0;l<qNum ;l++ )
+		{
+			n=qArr[l][0]; m=qArr[l][1];
+			int[][] aArr= new int[n+1][m+1];
+			for (int i=n;i<=m ;i++ )
+				aArr[n][i]=1;
+
+			for (int i=n-1;i>0 ;i-- )
+				for (int j=i;j<=m-n+i ;j++ )
+					for (int k=j+1;k<=m;k++ )
+						aArr[i][j]+=aArr[i+1][k];
+
+			int ans=0;
+			for (int i=0;i<m+1 ;i++ )
+				ans+=aArr[1][i];
+			System.out.println(ans);
+		}
+	}
+}
+
+
+/*
+import java.util.*;
+
+class Q1010		//ìž¬ê·€ë¥¼ ì¨ì„œ ì‹œê°„ì´ˆê³¼ ê±¸ë¦¼
 {
 	public static void func(int a, int b, int[] count, int n, int m){
 		if (a==n || b==m-n+a){
@@ -22,7 +59,7 @@ class Q1010
 			qArr[i][1]=sc.nextInt();
 		}
 		
-		int[] count = new int[1];							// ¾ÆÁ÷Àº intÀÎÁö longÀÎÁö ¸ð¸¥´Ù. ÁÖ¼Ò·Î ¿Å±â·Á°í ¹è¿­
+		int[] count = new int[1];							// ì•„ì§ì€ intì¸ì§€ longì¸ì§€ ëª¨ë¥¸ë‹¤. ì£¼ì†Œë¡œ ì˜®ê¸°ë ¤ê³  ë°°ì—´
 
 		for (int i=0;i<qNum ;i++ ){
 			count[0]=0;			
@@ -34,3 +71,4 @@ class Q1010
 		}
 	}
 }
+*/
