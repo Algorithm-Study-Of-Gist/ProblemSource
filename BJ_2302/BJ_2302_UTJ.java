@@ -1,30 +1,21 @@
-import java.util.*;
+import java.util.Scanner;
 
-class Q2302
-{
-	public static void main(String[] args) 
-	{
+public class BJ_2302_UTJ{
+	private static void fib(int []d, int n){
+		d[0] = 1; d[1] = 1;
+		for(int i=2;i<=n;i++) d[i] = d[i-1]+d[i-2];
+	}
+
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int vip = sc.nextInt();
-		int[] vArr = new int[vip];
-		for (int i=0;i<vip ;i++ )
-			vArr[i] = sc.nextInt();
-
-		int[] aArr = new int [vip+1];
-		aArr[0] = vArr[0]-1;
-		for (int i=0;i<vip-1 ;i++ )
-			aArr[i+1] = vArr[i+1]-vArr[i]-1;
-		aArr[vip] = n-vArr[vip-1];
-		
-		int max = aArr[0];
-		for (int i=1;i<vip+1 ;i++ )
-			if(max<aArr[i])
-				max = aArr[i];
-
-		System.out.println(max);
-
-		int[] fibo = new int [max];
-
+		int i, t, n = sc.nextInt(),m = sc.nextInt(), cur = 0, ans = 1;
+		int []d = new int[n+1]; fib(d, n);
+		for(i=0;i<m;i++){
+			t = sc.nextInt();
+			ans*=d[t - cur - 1];
+			cur = t;
+		}
+		ans*=d[n-cur];
+		System.out.print(ans);
 	}
 }
